@@ -10,20 +10,27 @@
 //     }
 // };
 // updated
+// class Solution {
+// public:
+//     bool isPowerOfTwo(int n) {
+
+//         if(n<=0)
+//             return false;
+//         int count=0;
+//         while(n)
+//         {
+//             int bit=n&1;//get bit
+//             if(bit)//check one and count++
+//                 count++;
+//             n=n>>1;
+//         }
+//         return (count==1);
+//     }
+// };
+
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
-
-        if(n<=0)
-            return false;
-        int count=0;
-        while(n)
-        {
-            int bit=n&1;//get bit
-            if(bit)//check one and count++
-                count++;
-            n=n>>1;
-        }
-        return (count==1);
+        return (n>0?(!(n&(n-1))):false);
     }
 };
