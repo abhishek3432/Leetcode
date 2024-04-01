@@ -1,19 +1,16 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        //Approach:pick element and loop with all element and checkt thier sum
-        int[] ans= new int[2];
-        for( int first=0; first<nums.length; first++)
-        {
-            for(int second=first+1; second<nums.length;second++)
-            {
-                if(nums[first]+nums[second]==target)
-                 {
-                    ans[0]=first;
-                    ans[1]=second;
-                 }
-            }
-        }
 
-        return ans;
+        //OptimizedApproach: insert element in hashtable with condition that target-element exist then return both element index| TC:(n)| SC:(n)
+        
+        HashMap<Integer, Integer> ans= new HashMap<>();
+        for(int first=0; first<nums.length; first++)
+        {
+            int second=target-nums[first];
+            if(ans.containsKey(second))
+                return new int[] {first,ans.get(second)};
+            ans.put(nums[first],first);
+        }
+        return new int[] {};
     }
 }
