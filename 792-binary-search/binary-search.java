@@ -1,3 +1,4 @@
+//704. Binary Search
 class Solution {
     public int search(int[] nums, int target) {
         //Approach: Using Binary Search Algorithm
